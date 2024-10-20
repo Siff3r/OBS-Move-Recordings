@@ -43,9 +43,9 @@ def signal_handler_function(calldata):
         last_recording = obs.obs_frontend_get_last_recording()
         file_name = os.path.basename(last_recording)
         
-        if file_name.startswith(prefix_a):
+        if file_name.lower().startswith(prefix_a):
             move(last_recording, os.path.join(folder_a, file_name))
-        elif file_name.startswith(prefix_b):
+        elif file_name.lower().startswith(prefix_b):
             move(last_recording, os.path.join(folder_b, file_name))
         else:
             pass  # Do not move the file
